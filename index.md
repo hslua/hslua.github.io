@@ -36,17 +36,6 @@ coding in C and importing the external functions via the Haskell FFI is
 the better way.
 
 
-<!--
-Design
-------
-
-- Why no monad transformer? Performance degrades when generalizing from
-  IO to MonadIO. The most frequent use would be to add an additional
-  state. State variables should be safed in the registry, for example
-  via as Userdata.
-
--->
-
 Internals
 ---------
 
