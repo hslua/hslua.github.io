@@ -57,7 +57,7 @@ below should be abstracted away, and users should not have to concern
 themselves with the details described below.
 
 
-#### Errors and the Call Stack
+#### Errors and the call stack
 
 The method used for error handling by Lua is build around the `setjmp`
 and `longjmp` C functions. This is simple and powerful, but poses some
@@ -72,7 +72,7 @@ boundary we have to check for errors and propagate them properly to the
 next level in stack. Hslua does this for you, both when returning from
 Lua to Haskell, and when calling from Haskell into Lua.
 
-#### HsLua must Translate Errors
+#### HsLua must translate errors
 
 Let's say we have this call stack: (stack grows upwards)
 
@@ -97,7 +97,7 @@ run before Haskell function returns. For this reason we can use
 that case we need to make sure there are no Haskell calls between the
 error-throwing Lua call and our `pcall` call.
 
-#### Error to Exceptions (and back)
+#### Error to exceptions (and back)
 
 To be able to catch exceptions from Haskell functions in Lua, we need to
 define a custom error protocol. Currently HsLua does this: `error` has
@@ -130,3 +130,20 @@ The reason it's safe is because the `lua_pcall` C function is calling
 the Lua function using Lua C API, and when the called Lua function calls
 `error` it `longjmp`s to `lua_pcall` C function, without skipping any
 layers of abstraction. `lua_pcall` then returns to Haskell.
+
+
+Other resources
+---------------
+
+-   Small to medium sized examples:
+    [hslua-examples](https://github.com/hslua/hslua-examples)
+
+-   Support for aeson: [hslua-aeson](https://github.com/hslua/hslua-aeson)
+
+-   Blog posts by [@osa1](https://github.com/osa1) on earlier versions of HsLua:
+
+    +   <https://osa1.net/posts/2014-04-27-calling-haskell-lua.html>
+    +   <https://osa1.net/posts/2015-01-16-haskell-so-lua.html>
+
+-   Talk given at Haskell in Leipzig (HAL) 2017:
+    <https://github.com/tarleb/talks/blob/master/2017-10-26-hal/talk.org>
