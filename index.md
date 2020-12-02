@@ -205,7 +205,7 @@ best case. That's why HsLua wraps all API functions that can potentially
 fail in custom C functions. Those functions behave idential to the
 functions they wrap, but catch all errors and return error codes
 instead. This comes with a serious performance penalty, but using
-@error@ within Lua should be safe.
+`error` within Lua should be safe.
 
 The `pcall` function is not wrapped in additional C code but still safe.
 The reason it's safe is because the `lua_pcall` C function is calling
