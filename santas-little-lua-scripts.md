@@ -191,7 +191,7 @@ double chocolate chip cookie of which he felt very deserving now.
 [`dofile`]: https://hackage.haskell.org/package/hslua/docs/Foreign-Lua-Core.html#v:dofile
 [`filterM`]: https://hackage.haskell.org/package/base/docs/Control-Monad.html#v:filterM
 
---------------------------------------------------------------------
+-----------------------------------------------------------------
 
 This post was written by [Albert Krewinkel][tarleb]. Shoot him a
 mail or come say *hi* [on Twitter][@kraut0xa]!
@@ -209,8 +209,16 @@ Also, don't miss the [Modernes Publizieren] Advent calendar (in
 German), with many interesting bits and pieces on the use of open
 resources in academic publishing!
 
+-----------------------------------------------------------------
+
 [tarleb]: https://github.com/tarleb
 [@kraut0xa]: https://twitter.com/kraut0xa
 [Advent of Haskell]: https://adventofhaskell.com/
 [@AdventOfHaskell]: https://twitter.com/AdventOfHaskell
 [Modernes Publizieren]: https://oa-pub.hos.tuhh.de/de/oa-advent-cal/
+
+<style>
+hr {
+  margin: 4em 2em;
+}
+</style>
